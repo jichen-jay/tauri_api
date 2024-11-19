@@ -85,9 +85,9 @@ pub fn create_tray<R: Runtime>(app: &tauri::AppHandle<R>) -> tauri::Result<()> {
       i @ "icon-1" | i @ "icon-2" => {
         if let Some(tray) = app.tray_by_id("tray-1") {
           let icon = if i == "icon-1" {
-            include_image!("../../.icons/icon.ico")
+            include_image!("../.icons/icon.ico")
           } else {
-            include_image!("../../.icons/tray_icon_with_transparency.png")
+            include_image!("../.icons/tray_icon_with_transparency.png")
           };
           let _ = tray.set_icon(Some(icon));
         }
